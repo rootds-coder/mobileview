@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Doctor - Expert Mobile Repair & Services</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body class="font-poppins bg-gray-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 w-full z-50 shadow-lg border-b border-cyan-500">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center text-2xl font-bold text-cyan-400">
+                <i class="fas fa-mobile-alt mr-2 text-magenta-400"></i>Mobile Doctor
+            </a>
+            <button id="navToggle" class="md:hidden text-gray-200">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <ul id="navMenu" class="hidden md:flex space-x-6 items-center">
+                                 <li><a href="/" class="hover:text-cyan-400 transition group"><i class="fas fa-home mr-1 group-hover:text-blue-400 transition-colors"></i><span class="group-hover:text-blue-400 transition-colors">Home</span></a></li>
+                 <li><a href="/services" class="hover:text-cyan-400 transition group"><i class="fas fa-tools mr-1 group-hover:text-orange-400 transition-colors"></i><span class="group-hover:text-orange-400 transition-colors">Services</span></a></li>
+                 <li><a href="/posts" class="hover:text-cyan-400 transition group"><i class="fas fa-newspaper mr-1 group-hover:text-purple-400 transition-colors"></i><span class="group-hover:text-purple-400 transition-colors">Blog</span></a></li>
+                 <li><a href="/gallery" class="hover:text-cyan-400 transition group"><i class="fas fa-images mr-1 group-hover:text-pink-400 transition-colors"></i><span class="group-hover:text-pink-400 transition-colors">Gallery</span></a></li>
+                 <li><a href="/youtube" class="hover:text-cyan-400 transition group"><i class="fab fa-youtube mr-1 group-hover:text-red-400 transition-colors"></i><span class="group-hover:text-red-400 transition-colors">Videos</span></a></li>
+                 <li><a href="/contact" class="hover:text-cyan-400 transition group"><i class="fas fa-envelope mr-1 group-hover:text-teal-400 transition-colors"></i><span class="group-hover:text-teal-400 transition-colors">Contact</span></a></li>
+                                 <li><a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow group"><i class="fab fa-whatsapp mr-1 group-hover:text-green-400 transition-colors"></i><span class="group-hover:text-green-400 transition-colors">WhatsApp</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-cyan-400 neon-text">Expert Mobile Repair & Flashing Services</h1>
+                <p class="text-lg mb-6">Fast, reliable, and affordable solutions by certified technicians for all your mobile device needs.</p>
+                                 <div class="flex space-x-4">
+                     <a href="/services" class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition neon-glow active:bg-magenta-600 active:text-white active:scale-95 transform duration-150 group"><i class="fas fa-tools mr-2 group-hover:text-orange-400 transition-colors"></i><span class="group-hover:text-orange-400 transition-colors">Our Services</span></a>
+                     <a href="/contact" class="bg-transparent border-2 border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 transition active:bg-purple-600 active:border-purple-600 active:text-white active:scale-95 transform duration-150 group"><i class="fas fa-phone mr-2 group-hover:text-teal-400 transition-colors"></i><span class="group-hover:text-teal-400 transition-colors">Contact Us</span></a>
+                 </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/images/hero-mobile.png" alt="Mobile Repair" class="w-full rounded-lg shadow-xl border border-cyan-500 neon-glow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-cyan-400 mb-4 neon-text">Our Services</h2>
+            <p class="text-center text-gray-400 mb-12">Comprehensive mobile solutions tailored to your needs</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="service-card p-6 bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg shadow-md hover:shadow-lg transition neon-border group">
+                    <i class="fas fa-mobile-alt text-4xl text-blue-400 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:text-blue-300 group-hover:drop-shadow-lg group-hover:drop-shadow-blue-400/50"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-magenta-400">Mobile Repair</h3>
+                    <p class="text-gray-400 mb-4">Screen replacement, battery fixes, and hardware repairs.</p>
+                    <p class="text-cyan-400 font-bold">Starting ₹500</p>
+                    <a href="/services" class="text-cyan-400 hover:underline">Learn More</a>
+                </div>
+                <div class="service-card p-6 bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg shadow-md hover:shadow-lg transition neon-border group">
+                    <i class="fas fa-download text-4xl text-green-400 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12 group-hover:text-green-300 group-hover:drop-shadow-lg group-hover:drop-shadow-green-400/50"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-magenta-400">Flashing Services</h3>
+                    <p class="text-gray-400 mb-4">Custom ROMs, firmware updates, and optimization.</p>
+                    <p class="text-cyan-400 font-bold">Starting ₹300</p>
+                    <a href="/services" class="text-cyan-400 hover:underline">Learn More</a>
+                </div>
+                <div class="service-card p-6 bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg shadow-md hover:shadow-lg transition neon-border group">
+                    <i class="fas fa-tint text-4xl text-blue-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-blue-400 group-hover:drop-shadow-lg group-hover:drop-shadow-blue-500/50"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-magenta-400">Water Damage</h3>
+                    <p class="text-gray-400 mb-4">Specialized repair and recovery for water-damaged devices.</p>
+                    <p class="text-cyan-400 font-bold">Starting ₹800</p>
+                    <a href="/services" class="text-cyan-400 hover:underline">Learn More</a>
+                </div>
+                <div class="service-card p-6 bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg shadow-md hover:shadow-lg transition neon-border group">
+                    <i class="fas fa-cogs text-4xl text-purple-400 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-180 group-hover:text-purple-300 group-hover:drop-shadow-lg group-hover:drop-shadow-purple-400/50"></i>
+                    <h3 class="text-xl font-semibold mb-2 text-magenta-400">Hardware Upgrades</h3>
+                    <p class="text-gray-400 mb-4">Memory, storage, and performance enhancements.</p>
+                    <p class="text-cyan-400 font-bold">Starting ₹1000</p>
+                    <a href="/services" class="text-cyan-400 hover:underline">Learn More</a>
+                </div>
+            </div>
+                         <div class="text-center mt-12">
+                 <a href="/services" class="bg-magenta-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-magenta-600 transition neon-glow active:bg-cyan-600 active:text-gray-900 active:scale-95 transform duration-150 group">View All Services <i class="fas fa-arrow-right ml-2 group-hover:text-orange-400 transition-colors"></i></a>
+             </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold text-cyan-400 mb-6 neon-text">Why Choose Mobile Doctor?</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-clock text-2xl text-cyan-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-semibold text-magenta-400">Fast Service</h4>
+                            <p class="text-gray-400">Same-day service available.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-shield-alt text-2xl text-cyan-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-semibold text-magenta-400">Warranty</h4>
+                            <p class="text-gray-400">Comprehensive repair warranty.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-tools text-2xl text-cyan-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-semibold text-magenta-400">Expert Technicians</h4>
+                            <p class="text-gray-400">Certified professionals.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-dollar-sign text-2xl text-cyan-400 mr-4"></i>
+                        <div>
+                            <h4 class="font-semibold text-magenta-400">Affordable Prices</h4>
+                            <p class="text-gray-400">No hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/images/why-choose-us.jpg" alt="Why Choose Us" class="w-full rounded-lg shadow-xl border border-cyan-500 neon-glow">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <i class="fas fa-tools text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">1000+</h3>
+                    <p class="text-gray-400">Repairs Completed</p>
+                </div>
+                <div>
+                    <i class="fas fa-smile text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">500+</h3>
+                    <p class="text-gray-400">Happy Customers</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">5+</h3>
+                    <p class="text-gray-400">Years Experience</p>
+                </div>
+                <div>
+                    <i class="fas fa-star text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">4.8</h3>
+                    <p class="text-gray-400">Customer Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-cyan-400 mb-4 neon-text">Latest Blog Posts</h2>
+            <p class="text-center text-gray-400 mb-12">Stay updated with mobile repair tips and tricks</p>
+                         <div class="text-center">
+                 <a href="/posts" class="bg-magenta-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-magenta-600 transition neon-glow active:bg-green-600 active:text-white active:scale-95 transform duration-150 group">View All Posts <i class="fas fa-arrow-right ml-2 group-hover:text-purple-400 transition-colors"></i></a>
+             </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-cyan-400 mb-4 neon-text">Our Work Gallery</h2>
+            <p class="text-center text-gray-400 mb-12">See our recent repair and service work</p>
+            
+            <% if (gallery && gallery.length > 0) { %>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <% gallery.slice(0, 8).forEach(function(item) { %>
+                        <div class="relative group">
+                            <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                                <div class="text-white text-center p-4">
+                                    <h3 class="text-lg font-semibold text-cyan-400 mb-2"><%= item.title %></h3>
+                                    <p class="text-gray-300 text-sm"><%= item.description || 'Professional mobile repair service' %></p>
+                                    <div class="mt-3">
+                                        <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs"><%= item.category %></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <!-- Fallback gallery items when no database items -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div class="relative group">
+                        <img src="/images/gallery1.jpg" alt="iPhone Screen Repair" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">iPhone Screen Repair</h3>
+                                <p class="text-gray-300 text-sm">Professional iPhone screen replacement service</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Repair</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <img src="/images/gallery2.jpg" alt="Android Flashing" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">Android Flashing</h3>
+                                <p class="text-gray-300 text-sm">Android device flashing and custom ROM installation</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Flashing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <img src="/images/gallery3.jpg" alt="Battery Replacement" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">Battery Replacement</h3>
+                                <p class="text-gray-300 text-sm">Mobile battery replacement service</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Repair</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <img src="/images/gallery4.jpg" alt="Water Damage Repair" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">Water Damage Repair</h3>
+                                <p class="text-gray-300 text-sm">Water damage repair and recovery</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Repair</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <img src="/images/gallery5.jpg" alt="Custom ROM Installation" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">Custom ROM Installation</h3>
+                                <p class="text-gray-300 text-sm">Custom ROM installation service</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Flashing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative group">
+                        <img src="/images/gallery6.jpg" alt="Hardware Upgrades" class="w-full h-48 object-cover rounded-lg border border-cyan-500 neon-glow hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition rounded-lg">
+                            <div class="text-white text-center p-4">
+                                <h3 class="text-lg font-semibold text-cyan-400 mb-2">Hardware Upgrades</h3>
+                                <p class="text-gray-300 text-sm">Mobile hardware upgrade services</p>
+                                <div class="mt-3">
+                                    <span class="bg-magenta-500 text-white px-3 py-1 rounded-full text-xs">Upgrade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            
+            <div class="text-center mt-12">
+                <a href="/gallery" class="bg-magenta-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-magenta-600 transition neon-glow active:bg-blue-600 active:text-white active:scale-95 transform duration-150 group">View Full Gallery <i class="fas fa-arrow-right ml-2 group-hover:text-pink-400 transition-colors"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-2/3 mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold mb-4 text-cyan-400 neon-text">Ready to Get Started?</h2>
+                <p class="text-lg mb-6 text-gray-400">Contact us for professional mobile repair and flashing services.</p>
+                                 <div class="flex space-x-4">
+                     <a href="/contact" class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition neon-glow active:bg-orange-600 active:text-white active:scale-95 transform duration-150 group"><i class="fas fa-envelope mr-2 group-hover:text-teal-400 transition-colors"></i><span class="group-hover:text-teal-400 transition-colors">Contact Us</span></a>
+                     <a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-magenta-600 transition neon-glow active:bg-magenta-700 active:text-white active:scale-95 transform duration-150 group"><i class="fab fa-whatsapp mr-2 group-hover:text-green-400 transition-colors"></i><span class="group-hover:text-green-400 transition-colors">WhatsApp</span></a>
+                 </div>
+            </div>
+            <div class="md:w-1/3 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-phone text-2xl text-cyan-400 mb-2"></i>
+                    <p class="text-gray-400">+91 99929 19688</p>
+                </div>
+                <div>
+                    <i class="fas fa-clock text-2xl text-cyan-400 mb-2"></i>
+                    <p class="text-gray-400">Mon-Sat: 9AM-7PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-mobile-alt text-3xl text-cyan-400 mr-3"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 neon-text">Mobile Doctor</h3>
+                        <p class="text-gray-400">Professional Mobile Repair</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-4">Your trusted partner for all mobile device repairs and flashing services.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/realmobiledoctor/" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.youtube.com/@Realmobiledoctor" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="https://www.google.com/maps/place/81,+Ganesh+Market,+Bhamashah+Nagar,+Hisar,+Haryana+125001" class="text-gray-400 hover:text-cyan-400"><i class="fas fa-map-marker-alt fa-lg"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Services</h4>
+                <ul class="space-y-2">
+                                         <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Mobile Repair</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Screen Replacement</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Battery Replacement</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Flashing Services</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Water Damage Repair</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h4>
+                <ul class="space-y-2">
+                                         <li><a href="/posts" class="text-gray-400 hover:text-purple-400 transition-colors">Blog Posts</a></li>
+                     <li><a href="/gallery" class="text-gray-400 hover:text-pink-400 transition-colors">Photo Gallery</a></li>
+                     <li><a href="/youtube" class="text-gray-400 hover:text-red-400 transition-colors">Video Tutorials</a></li>
+                     <li><a href="/contact" class="text-gray-400 hover:text-teal-400 transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Contact Info</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-cyan-400"></i><span class="text-gray-400">81, Ganesh Market, Bhamashah Nagar, Hisar, Haryana 125001</span></li>
+                    <li class="flex items-center"><i class="fas fa-phone mr-2 text-cyan-400"></i><span class="text-gray-400">+91 99929 19688</span></li>
+                    <li class="flex items-center"><i class="fas fa-user mr-2 text-cyan-400"></i><span class="text-gray-400">Owner: Sunny Gujjar</span></li>
+                    <li class="flex items-center"><i class="fas fa-clock mr-2 text-cyan-400"></i><span class="text-gray-400">Mon-Sat: 9AM-7PM</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-gray-700 my-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400">© 2024 Mobile Doctor. All rights reserved.</p>
+                         <a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow active:bg-magenta-700 active:text-white active:scale-95 transform duration-150 mt-4 md:mt-0 group"><i class="fab fa-whatsapp mr-2 group-hover:text-green-400 transition-colors"></i><span class="group-hover:text-green-400 transition-colors">Chat on WhatsApp</span></a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-magenta-500 text-white p-3 rounded-full shadow-lg hover:bg-magenta-600 transition neon-glow hidden"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Custom JS -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Mobile Doctor</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body class="font-poppins bg-gray-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 w-full z-50 shadow-lg border-b border-cyan-500">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center text-2xl font-bold text-cyan-400">
+                <i class="fas fa-mobile-alt mr-2 text-magenta-400"></i>Mobile Doctor
+            </a>
+            <button id="navToggle" class="md:hidden text-gray-200">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <ul id="navMenu" class="hidden md:flex space-x-6 items-center">
+                <li><a href="/" class="hover:text-cyan-400 transition"><i class="fas fa-home mr-1"></i>Home</a></li>
+                <li><a href="/services" class="hover:text-cyan-400 transition"><i class="fas fa-tools mr-1"></i>Services</a></li>
+                <li><a href="/posts" class="hover:text-cyan-400 transition"><i class="fas fa-newspaper mr-1"></i>Blog</a></li>
+                <li><a href="/gallery" class="hover:text-cyan-400 transition"><i class="fas fa-images mr-1"></i>Gallery</a></li>
+                <li><a href="/youtube" class="hover:text-cyan-400 transition"><i class="fab fa-youtube mr-1"></i>Videos</a></li>
+                <li><a href="/contact" class="hover:text-cyan-400 transition"><i class="fas fa-envelope mr-1"></i>Contact</a></li>
+                <li><a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow"><i class="fab fa-whatsapp mr-1"></i>WhatsApp</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-cyan-400 neon-text">Our Work Gallery</h1>
+            <p class="text-lg mb-6 text-gray-400">See our recent repair and service work</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="py-8 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn bg-magenta-500 text-white px-6 py-2 rounded-full hover:bg-magenta-600 transition neon-glow" data-filter="all">All</button>
+                <button class="filter-btn bg-gray-800 text-gray-300 px-6 py-2 rounded-full hover:bg-gray-700 transition" data-filter="repair">Repair</button>
+                <button class="filter-btn bg-gray-800 text-gray-300 px-6 py-2 rounded-full hover:bg-gray-700 transition" data-filter="screen">Screen</button>
+                <button class="filter-btn bg-gray-800 text-gray-300 px-6 py-2 rounded-full hover:bg-gray-700 transition" data-filter="battery">Battery</button>
+                <button class="filter-btn bg-gray-800 text-gray-300 px-6 py-2 rounded-full hover:bg-gray-700 transition" data-filter="flashing">Flashing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <% if (gallery && gallery.length > 0) { %>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <% gallery.forEach(function(item) { %>
+                <div class="gallery-item bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg overflow-hidden neon-border" data-category="<%= item.category %>">
+                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-magenta-400"><%= item.title %></h3>
+                        <p class="text-gray-400 mb-4"><%= item.description %></p>
+                        <button onclick="openLightbox('<%= item.image %>', '<%= item.title %>', '<%= item.description %>', '<%= item.category %>', '<%= item.created_at %>')" class="bg-cyan-500 text-white px-4 py-2 rounded-full hover:bg-cyan-600 transition neon-glow">View Details</button>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+            <% } else { %>
+            <div class="text-center py-12">
+                <i class="fas fa-images text-6xl text-gray-600 mb-4"></i>
+                <h3 class="text-2xl font-semibold text-gray-400 mb-2">No Gallery Images Available</h3>
+                <p class="text-gray-500">Check back soon for our latest work!</p>
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-6 neon-border">
+                    <i class="fas fa-tools text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">1000+</h3>
+                    <p class="text-gray-400">Devices Repaired</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-6 neon-border">
+                    <i class="fas fa-download text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">200+</h3>
+                    <p class="text-gray-400">Flashing Jobs</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-6 neon-border">
+                    <i class="fas fa-smile text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">98%</h3>
+                    <p class="text-gray-400">Customer Satisfaction</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-6 neon-border">
+                    <i class="fas fa-clock text-4xl text-cyan-400 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-magenta-400">24h</h3>
+                    <p class="text-gray-400">Average Turnaround</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4 text-cyan-400 neon-text">Like Our Work?</h2>
+            <p class="text-lg mb-6 text-gray-400">Get professional mobile repair and flashing services for your device!</p>
+            <div class="flex gap-3 justify-center flex-wrap">
+                <a href="https://wa.me/919992919688?text=Hi! I saw your gallery and need mobile repair services." 
+                   class="bg-magenta-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-magenta-600 transition neon-glow" target="_blank">
+                    <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+                </a>
+                <a href="/contact" class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-gray-700 transition neon-glow">
+                    <i class="fas fa-phone mr-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-95 hidden z-50 flex items-center justify-center p-4">
+        <div class="relative max-w-5xl w-full max-h-full overflow-y-auto bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg rounded-lg border border-cyan-500 shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl hover:text-cyan-400 transition z-10 bg-gray-800 bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Modal Content -->
+            <div class="p-6">
+                <!-- Image Section -->
+                <div class="mb-6">
+                    <img id="lightboxImage" src="" alt="" class="w-full h-auto rounded-lg shadow-lg max-h-96 object-cover mx-auto">
+                </div>
+                
+                <!-- Details Section -->
+                <div class="space-y-4">
+                    <!-- Title -->
+                    <div class="text-center">
+                        <h3 id="lightboxTitle" class="text-2xl font-bold text-cyan-400 neon-text mb-2"></h3>
+                    </div>
+                    
+                    <!-- Meta Information -->
+                    <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-tag mr-2 text-magenta-400"></i>
+                            <span id="lightboxCategory" class="capitalize"></span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-calendar mr-2 text-magenta-400"></i>
+                            <span id="lightboxDate"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 border border-gray-700">
+                        <h4 class="text-lg font-semibold text-magenta-400 mb-2">
+                            <i class="fas fa-info-circle mr-2"></i>Description
+                        </h4>
+                        <p id="lightboxDescription" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex justify-center gap-4 pt-4">
+                        <a href="https://wa.me/919992919688?text=Hi! I'm interested in this service from your gallery." 
+                           class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition neon-glow flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Inquire on WhatsApp
+                        </a>
+                        <a href="/contact" 
+                           class="bg-cyan-500 text-white px-6 py-2 rounded-full hover:bg-cyan-600 transition neon-glow flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cyberpunk Footer -->
+    <footer class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-mobile-alt text-3xl text-cyan-400 mr-3"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 neon-text">Mobile Doctor</h3>
+                        <p class="text-gray-400">Professional Mobile Repair</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-4">Your trusted partner for all mobile device repairs and flashing services.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/realmobiledoctor/" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.youtube.com/@Realmobiledoctor" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="https://www.google.com/maps/place/81,+Ganesh+Market,+Bhamashah+Nagar,+Hisar,+Haryana+125001" class="text-gray-400 hover:text-cyan-400"><i class="fas fa-map-marker-alt fa-lg"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="/services" class="text-gray-400 hover:text-cyan-400">Mobile Repair</a></li>
+                    <li><a href="/services" class="text-gray-400 hover:text-cyan-400">Screen Replacement</a></li>
+                    <li><a href="/services" class="text-gray-400 hover:text-cyan-400">Battery Replacement</a></li>
+                    <li><a href="/services" class="text-gray-400 hover:text-cyan-400">Flashing Services</a></li>
+                    <li><a href="/services" class="text-gray-400 hover:text-cyan-400">Water Damage Repair</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/posts" class="text-gray-400 hover:text-cyan-400">Blog Posts</a></li>
+                    <li><a href="/gallery" class="text-gray-400 hover:text-cyan-400">Photo Gallery</a></li>
+                    <li><a href="/youtube" class="text-gray-400 hover:text-cyan-400">Video Tutorials</a></li>
+                    <li><a href="/contact" class="text-gray-400 hover:text-cyan-400">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Contact Info</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-cyan-400"></i><span class="text-gray-400">81, Ganesh Market, Bhamashah Nagar, Hisar, Haryana 125001</span></li>
+                    <li class="flex items-center"><i class="fas fa-phone mr-2 text-cyan-400"></i><span class="text-gray-400">+91 99929 19688</span></li>
+                    <li class="flex items-center"><i class="fas fa-user mr-2 text-cyan-400"></i><span class="text-gray-400">Owner: Sunny Gujjar</span></li>
+                    <li class="flex items-center"><i class="fas fa-clock mr-2 text-cyan-400"></i><span class="text-gray-400">Mon-Sat: 9AM-7PM</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-gray-700 my-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400">© 2024 Mobile Doctor. All rights reserved.</p>
+            <a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow mt-4 md:mt-0"><i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp</a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-magenta-500 text-white p-3 rounded-full shadow-lg hover:bg-magenta-600 transition neon-glow hidden"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Custom JS -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-magenta-500', 'text-white');
+                        btn.classList.add('bg-gray-800', 'text-gray-300');
+                    });
+                    this.classList.remove('bg-gray-800', 'text-gray-300');
+                    this.classList.add('bg-magenta-500', 'text-white');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Enhanced Lightbox functionality
+        function openLightbox(imageSrc, title, description, category, createdDate) {
+            const modal = document.getElementById('lightboxModal');
+            const image = document.getElementById('lightboxImage');
+            const titleElement = document.getElementById('lightboxTitle');
+            const descriptionElement = document.getElementById('lightboxDescription');
+            const categoryElement = document.getElementById('lightboxCategory');
+            const dateElement = document.getElementById('lightboxDate');
+            
+            image.src = imageSrc;
+            image.alt = title;
+            titleElement.textContent = title;
+            descriptionElement.textContent = description || 'No description available';
+            categoryElement.textContent = category || 'Uncategorized';
+            
+            if (createdDate) {
+                const date = new Date(createdDate);
+                dateElement.textContent = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            } else {
+                dateElement.textContent = 'Date not available';
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        // Close lightbox when clicking outside
+        document.getElementById('lightboxModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html> 

@@ -1,0 +1,155 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="mb-0">
+        <i class="fas fa-<%= post.id ? 'edit' : 'plus' %> me-2"></i>
+        <%= post.id ? 'Edit Post' : 'Add New Post' %>
+    </h5>
+            <a href="/sunny/posts" class="btn btn-outline-secondary btn-admin">
+        <i class="fas fa-arrow-left me-2"></i>Back to Posts
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST" action="<%= post.id ? `/sunny/posts/${post.id}` : '/sunny/posts' %>" 
+              enctype="multipart/form-data">
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">
+                            <i class="fas fa-heading me-2"></i>Post Title
+                        </label>
+                        <input type="text" class="form-control" id="title" name="title" 
+                               value="<%= post.title || '' %>" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="content" class="form-label">
+                            <i class="fas fa-align-left me-2"></i>Content
+                        </label>
+                        <textarea class="form-control" id="content" name="content" rows="12" required><%= post.content || '' %></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="author" class="form-label">
+                            <i class="fas fa-user me-2"></i>Author
+                        </label>
+                        <input type="text" class="form-control" id="author" name="author" 
+                               value="<%= post.author || user.username %>" required>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">
+                            <i class="fas fa-image me-2"></i>Featured Image
+                        </label>
+                        <input type="file" class="form-control" id="image" name="image" 
+                               accept="image/*">
+                        <small class="text-muted">Upload a featured image for the post (optional)</small>
+                        <div class="mt-2">
+                            <label for="image_url" class="form-label"><i class="fas fa-link me-2"></i>Or Image URL</label>
+                            <input type="url" class="form-control" id="image_url" name="image_url" placeholder="https://example.com/image.jpg" value="<%= (post.image && post.image.startsWith('http')) ? post.image : '' %>">
+                            <small class="text-muted">Paste an image URL (optional)</small>
+                            <div id="imageUrlPreview" class="mt-2"></div>
+                        </div>
+                        <% if (post.image) { %>
+                            <div class="mt-3">
+                                <label class="form-label">Current Image:</label>
+                                <img src="<%= post.image %>" alt="Current image" 
+                                     class="img-fluid rounded mb-2" style="max-height: 200px;">
+                                <input type="hidden" name="current_image" value="<%= post.image %>">
+                            </div>
+                        <% } %>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="status" class="form-label">
+                            <i class="fas fa-toggle-on me-2"></i>Status
+                        </label>
+                        <select class="form-control" id="status" name="status">
+                            <option value="draft" <%= post.status === 'draft' ? 'selected' : '' %>>Draft</option>
+                            <option value="published" <%= post.status === 'published' ? 'selected' : '' %>>Published</option>
+                        </select>
+                    </div>
+                    
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                <i class="fas fa-info-circle me-2"></i>Post Tips
+                            </h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <small class="text-muted">
+                                        <i class="fas fa-check me-1"></i>Write engaging titles
+                                    </small>
+                                </li>
+                                <li class="mb-2">
+                                    <small class="text-muted">
+                                        <i class="fas fa-check me-1"></i>Use clear, concise content
+                                    </small>
+                                </li>
+                                <li class="mb-2">
+                                    <small class="text-muted">
+                                        <i class="fas fa-check me-1"></i>Add relevant images
+                                    </small>
+                                </li>
+                                <li>
+                                    <small class="text-muted">
+                                        <i class="fas fa-check me-1"></i>Keep posts mobile-friendly
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="d-flex justify-content-end gap-2">
+                <a href="/sunny/posts" class="btn btn-outline-secondary">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-<%= post.id ? 'save' : 'plus' %> me-2"></i>
+                    <%= post.id ? 'Update Post' : 'Create Post' %>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+// Preview image before upload
+document.getElementById('image').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.createElement('img');
+            preview.src = e.target.result;
+            preview.className = 'img-fluid rounded mb-2';
+            preview.style.maxHeight = '200px';
+            
+            const container = document.getElementById('image').parentNode;
+            const existingPreview = container.querySelector('img');
+            if (existingPreview) {
+                existingPreview.remove();
+            }
+            container.appendChild(preview);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+document.getElementById('image_url').addEventListener('input', function(e) {
+    const url = e.target.value;
+    const preview = document.getElementById('imageUrlPreview');
+    if (url) {
+        preview.innerHTML = `<img src='${url}' class='img-fluid rounded' style='max-height: 200px;'>`;
+    } else {
+        preview.innerHTML = '';
+    }
+});
+</script> 

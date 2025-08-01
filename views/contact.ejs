@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mobile Doctor</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body class="font-poppins bg-gray-900 text-gray-200">
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg fixed top-0 w-full z-50 shadow-lg border-b border-cyan-500">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center text-2xl font-bold text-cyan-400">
+                <i class="fas fa-mobile-alt mr-2 text-magenta-400"></i>Mobile Doctor
+            </a>
+            <button id="navToggle" class="md:hidden text-gray-200">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <ul id="navMenu" class="hidden md:flex space-x-6 items-center">
+                                 <li><a href="/" class="hover:text-cyan-400 transition group"><i class="fas fa-home mr-1 group-hover:text-blue-400 transition-colors"></i><span class="group-hover:text-blue-400 transition-colors">Home</span></a></li>
+                 <li><a href="/services" class="hover:text-cyan-400 transition group"><i class="fas fa-tools mr-1 group-hover:text-orange-400 transition-colors"></i><span class="group-hover:text-orange-400 transition-colors">Services</span></a></li>
+                 <li><a href="/posts" class="hover:text-cyan-400 transition group"><i class="fas fa-newspaper mr-1 group-hover:text-purple-400 transition-colors"></i><span class="group-hover:text-purple-400 transition-colors">Blog</span></a></li>
+                 <li><a href="/gallery" class="hover:text-cyan-400 transition group"><i class="fas fa-images mr-1 group-hover:text-pink-400 transition-colors"></i><span class="group-hover:text-pink-400 transition-colors">Gallery</span></a></li>
+                 <li><a href="/youtube" class="hover:text-cyan-400 transition group"><i class="fab fa-youtube mr-1 group-hover:text-red-400 transition-colors"></i><span class="group-hover:text-red-400 transition-colors">Videos</span></a></li>
+                 <li><a href="/contact" class="hover:text-cyan-400 transition group"><i class="fas fa-envelope mr-1 group-hover:text-teal-400 transition-colors"></i><span class="group-hover:text-teal-400 transition-colors">Contact</span></a></li>
+                <li><a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow"><i class="fab fa-whatsapp mr-1"></i>WhatsApp</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 text-white pt-20 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-cyan-400 neon-text">Contact Us</h1>
+            <p class="text-lg mb-6 text-gray-400">Get in touch with our expert technicians</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-8 neon-border">
+                    <h2 class="text-2xl font-bold mb-6 text-cyan-400 neon-text">Send us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2">First Name</label>
+                                <input type="text" name="firstName" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:border-cyan-400" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Last Name</label>
+                                <input type="text" name="lastName" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:border-cyan-400" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Email</label>
+                            <input type="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:border-cyan-400" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Phone</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:border-cyan-400" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Service Required</label>
+                            <select name="service" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:border-cyan-400">
+                                <option value="">Select a service</option>
+                                <option value="mobile-repair">Mobile Repair</option>
+                                <option value="screen-replacement">Screen Replacement</option>
+                                <option value="battery-replacement">Battery Replacement</option>
+                                <option value="flashing">Flashing Services</option>
+                                <option value="water-damage">Water Damage Repair</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Message</label>
+                            <textarea name="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:border-cyan-400" placeholder="Describe your issue or inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-magenta-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-magenta-600 transition neon-glow">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                        
+                        <!-- Notification div -->
+                        <div id="formNotification" class="hidden mt-4 p-3 rounded-lg text-center font-medium"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-8 neon-border">
+                        <h2 class="text-2xl font-bold mb-6 text-cyan-400 neon-text">Contact Information</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-2xl text-cyan-400 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-magenta-400 font-semibold mb-1">Address</h4>
+                                    <p class="text-gray-400">81, Ganesh Market, Bhamashah Nagar, Hisar, Haryana 125001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-2xl text-cyan-400 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-magenta-400 font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-400">+91 99929 19688</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-user text-2xl text-cyan-400 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-magenta-400 font-semibold mb-1">Owner</h4>
+                                    <p class="text-gray-400">Sunny Gujjar</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-2xl text-cyan-400 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="text-magenta-400 font-semibold mb-1">Business Hours</h4>
+                                    <p class="text-gray-400">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-8 neon-border">
+                        <h2 class="text-2xl font-bold mb-6 text-cyan-400 neon-text">Quick Contact</h2>
+                        <div class="space-y-4">
+                            <a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="flex items-center justify-center bg-magenta-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-magenta-600 transition neon-glow group">
+                                <i class="fab fa-whatsapp mr-2 group-hover:text-green-400 transition-colors"></i><span class="group-hover:text-green-400 transition-colors">Chat on WhatsApp</span>
+                            </a>
+                            <a href="tel:+919992919688" class="flex items-center justify-center bg-cyan-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-600 transition neon-glow">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-cyan-400 mb-4 neon-text">Find Us</h2>
+            <p class="text-center text-gray-400 mb-8">Visit our shop for professional mobile repair services</p>
+            <div class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg p-8 neon-border">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.1234567890123!2d75.7201857!3d29.1567767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232d60391eb3b%3A0x88b58f44314aa9cb!2s81%2C%20Ganesh%20Market%2C%20Bhamashah%20Nagar%2C%20Hisar%2C%20Haryana%20125001!5e0!3m2!1sen!2sin!4v1234567890123" 
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-cyan-400 mb-4 neon-text">Frequently Asked Questions</h2>
+            <p class="text-center text-gray-400 mb-12">Common questions about our services</p>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg neon-border">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center text-gray-200 hover:text-cyan-400 transition">
+                        <span class="font-semibold">How long does a typical repair take?</span>
+                        <i class="fas fa-chevron-down text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-gray-400 hidden">
+                        Most repairs are completed within 1-2 hours. Screen replacements and battery changes typically take 30-60 minutes. Complex repairs may take longer, and we'll provide an estimated timeline.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg neon-border">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center text-gray-200 hover:text-cyan-400 transition">
+                        <span class="font-semibold">Do you offer warranty on repairs?</span>
+                        <i class="fas fa-chevron-down text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-gray-400 hidden">
+                        Yes, we offer a comprehensive warranty on all our repairs. Screen replacements come with a 90-day warranty, and other repairs have a 30-day warranty. We stand behind our work quality.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg neon-border">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center text-gray-200 hover:text-cyan-400 transition">
+                        <span class="font-semibold">Can you repair water-damaged phones?</span>
+                        <i class="fas fa-chevron-down text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-gray-400 hidden">
+                        Yes, we specialize in water damage repair. Success depends on the extent of damage and how quickly you bring the device in. We use professional equipment to assess and repair water damage.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg neon-border">
+                    <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center text-gray-200 hover:text-cyan-400 transition">
+                        <span class="font-semibold">Do you work on all mobile brands?</span>
+                        <i class="fas fa-chevron-down text-cyan-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 text-gray-400 hidden">
+                        We repair all major mobile brands including iPhone, Samsung, Huawei, Xiaomi, OnePlus, Google Pixel, and many others. Our technicians are certified for multiple brands.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyberpunk Footer -->
+    <footer class="bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-mobile-alt text-3xl text-cyan-400 mr-3"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-400 neon-text">Mobile Doctor</h3>
+                        <p class="text-gray-400">Professional Mobile Repair</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-4">Your trusted partner for all mobile device repairs and flashing services.</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/realmobiledoctor/" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.youtube.com/@Realmobiledoctor" class="text-gray-400 hover:text-cyan-400"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="https://www.google.com/maps/place/81,+Ganesh+Market,+Bhamashah+Nagar,+Hisar,+Haryana+125001" class="text-gray-400 hover:text-cyan-400"><i class="fas fa-map-marker-alt fa-lg"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Services</h4>
+                <ul class="space-y-2">
+                                         <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Mobile Repair</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Screen Replacement</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Battery Replacement</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Flashing Services</a></li>
+                     <li><a href="/services" class="text-gray-400 hover:text-orange-400 transition-colors">Water Damage Repair</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Quick Links</h4>
+                <ul class="space-y-2">
+                                         <li><a href="/posts" class="text-gray-400 hover:text-purple-400 transition-colors">Blog Posts</a></li>
+                     <li><a href="/gallery" class="text-gray-400 hover:text-pink-400 transition-colors">Photo Gallery</a></li>
+                     <li><a href="/youtube" class="text-gray-400 hover:text-red-400 transition-colors">Video Tutorials</a></li>
+                     <li><a href="/contact" class="text-gray-400 hover:text-teal-400 transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-cyan-400">Contact Info</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-cyan-400"></i><span class="text-gray-400">81, Ganesh Market, Bhamashah Nagar, Hisar, Haryana 125001</span></li>
+                    <li class="flex items-center"><i class="fas fa-phone mr-2 text-cyan-400"></i><span class="text-gray-400">+91 99929 19688</span></li>
+                    <li class="flex items-center"><i class="fas fa-user mr-2 text-cyan-400"></i><span class="text-gray-400">Owner: Sunny Gujjar</span></li>
+                    <li class="flex items-center"><i class="fas fa-clock mr-2 text-cyan-400"></i><span class="text-gray-400">Mon-Sat: 9AM-7PM</span></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-gray-700 my-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400">© 2024 Mobile Doctor. All rights reserved.</p>
+                         <a href="https://wa.me/919992919688?text=Hi! I need help with my mobile device." class="bg-magenta-500 text-white px-4 py-2 rounded-full hover:bg-magenta-600 transition neon-glow mt-4 md:mt-0 group"><i class="fab fa-whatsapp mr-2 group-hover:text-green-400 transition-colors"></i><span class="group-hover:text-green-400 transition-colors">Chat on WhatsApp</span></a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-magenta-500 text-white p-3 rounded-full shadow-lg hover:bg-magenta-600 transition neon-glow hidden"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Custom JS -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+                // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Prevent multiple submissions
+            if (this.submitting) return;
+            this.submitting = true;
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                service: formData.get('service'),
+                message: formData.get('message')
+            };
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Send to contact API
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        first_name: data.firstName,
+                        last_name: data.lastName,
+                        email: data.email,
+                        phone: data.phone,
+                        service_needed: data.service,
+                        message: data.message
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show success state
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    submitBtn.classList.remove('bg-magenta-500', 'hover:bg-magenta-600');
+                    submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                    
+                    // Show success notification
+                    const notification = document.getElementById('formNotification');
+                    notification.textContent = 'Thank you! We will get back to you soon. Check your email for confirmation.';
+                    notification.className = 'mt-4 p-3 rounded-lg text-center font-medium bg-green-500 text-white';
+                    notification.classList.remove('hidden');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reset everything after 4 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+                        submitBtn.classList.add('bg-magenta-500', 'hover:bg-magenta-600');
+                        submitBtn.disabled = false;
+                        this.submitting = false;
+                        notification.classList.add('hidden');
+                    }, 4000);
+                } else {
+                    throw new Error(result.message || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // Show error state
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Failed';
+                submitBtn.classList.remove('bg-magenta-500', 'hover:bg-magenta-600');
+                submitBtn.classList.add('bg-red-500', 'hover:bg-red-600');
+                
+                // Show error notification
+                const notification = document.getElementById('formNotification');
+                notification.textContent = 'Failed to send message. Please try again or contact us directly.';
+                notification.className = 'mt-4 p-3 rounded-lg text-center font-medium bg-red-500 text-white';
+                notification.classList.remove('hidden');
+                
+                // Reset button after 4 seconds
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
+                    submitBtn.classList.add('bg-magenta-500', 'hover:bg-magenta-600');
+                    submitBtn.disabled = false;
+                    this.submitting = false;
+                    notification.classList.add('hidden');
+                }, 4000);
+            }
+        });
+
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('i');
+                    
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            const otherAnswer = item.querySelector('.faq-answer');
+                            const otherIcon = item.querySelector('.faq-question i');
+                            otherAnswer.classList.add('hidden');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    answer.classList.toggle('hidden');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html> 
