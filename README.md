@@ -30,7 +30,7 @@ A modern, responsive website for Mobile Doctor - a professional mobile repair an
 
 ### **Prerequisites**
 - Node.js (v14 or higher)
-- MySQL (v8.0 or higher)
+- MongoDB Atlas (for production)
 - Git
 
 ### **Installation**
@@ -49,12 +49,12 @@ npm install
 3. **Set up environment variables**
 Create a `.env` file in the root directory:
 ```env
-SMTP_HOST=mail9.serv00.com
+SMTP_HOST=mcom
 SMTP_PORT=587
 SMTP_SECURE=false
-SMTP_USER=bgmi-india@bgmi-india.serv00.net
+SMTP_USER=00.net
 SMTP_PASS=your_smtp_password
-ADMIN_EMAIL=dhruv9671267714@gmail.com
+ADMIN_EMAIL=@gmail.com
 PORT=3000
 ```
 
@@ -208,10 +208,10 @@ This project is licensed under the MIT License.
 ## 👨‍💼 Contact
 
 **Mobile Doctor**
-- **Owner:** Sunny Gujjar
-- **Phone:** +91 99929 19688
-- **Address:** 81, Ganesh Market, Bhamashah Nagar, Hisar, Haryana 125001
-- **Email:** dhruv9671267714@gmail.com
+- **Owner:** Sunny 
+- **Phone:** +91968
+- **Address:** 81, Ganesh Market,
+- **Email:** dhr4@gmail.com
 
 ## 🙏 Acknowledgments
 

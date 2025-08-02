@@ -91,7 +91,6 @@ dist
 
 # Gatsby files
 .cache/
-public
 
 # Storybook build outputs
 .out
@@ -118,8 +117,8 @@ ehthumbs.db
 Thumbs.db
 
 # Uploaded files
-public/uploads/
-uploads/
+public/uploads/*
+uploads/*
 
 # Database files
 *.db
